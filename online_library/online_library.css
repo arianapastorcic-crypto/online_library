@@ -1,0 +1,235 @@
+/* Reset margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background image for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('online_library.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 70%;
+    padding: 10px;
+    color: white;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.table-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.table-section > div {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    padding: 0 8px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    color: black;
+}
+
+.table-section > div:last-child {
+    flex-shrink: 0;
+    width: 200px;
+    flex: none;
+    border-right: none;
+}
+
+#book-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    word-wrap: break-word;
+    background: #fff;
+    color: #000;
+}
+
+#book-list > section {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.btn {
+    background: deeppink;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+
+.action-btn {
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.read-btn   { background: deepskyblue; }
+.edit-btn   { background: orange; }
+.delete-btn { background: crimson; }
+
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    align-items: center;
+}
+ 
+.filter-bar select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: white;
+    color: #333;
+    flex: 1;
+    min-width: 140px;
+}
+ 
+.filter-bar .btn {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+ 
+.hidden-row {
+    display: none !important;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#modal-content {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cell {
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+    word-break: break-word;
+    padding: 0 8px;
+    border-right: 1px solid #ccc;
+}
+
+/* Group buttons on the right */
+.action-btn, .read-label {
+    flex-shrink: 0;
+    margin-left: 6px;
+}
+
+/* Hide default checkbox */
+.read-checkbox {
+    display: none;
+}
+
+/* Read checkbox label */
+.read-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.read-label .toggle-track {
+    width: 36px;
+    height: 18px;
+    background: #ccc;
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.read-label .toggle-track::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
+}
+
+.read-checkbox:checked + .toggle-track {
+    background: deepskyblue;
+}
+
+.read-checkbox:checked + .toggle-track::after {
+    left: 20px;
+}
+
+/* Strike-through when marked as read */
+.row-read .cell {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    width: 200px;
+    justify-content: flex-end;
+    border-right: none;
+}

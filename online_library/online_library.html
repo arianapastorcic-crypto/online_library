@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library</title>
+    <link rel="stylesheet" href="online_library.css">
+</head>
+<body>
+    <section class="container">
+        <form id="book-form">
+            <div>
+                <label for="title">Book Title</label>
+                <input type="text" id="title">
+            </div>
+
+            <div>
+                <label for="author">Book Author</label>
+                <input type="text" id="author">
+            </div>
+
+            <div>
+                <label for="year">Published Year</label>
+                <input type="number" id="year">
+            </div>
+
+            <div>
+                <label for="language">Book Language</label>
+                <input type="text" id="language">
+            </div>
+
+            <div>
+                <label for="genre">Book Genre</label>
+                <input type="text" id="genre">
+            </div>
+
+            <button type="submit" class="btn" id="button">Add Book</button>
+        </form>
+
+        <!-- Filter bar -->
+        <section class="filter-bar">
+            <select id="filter-genre">
+                <option value="">Svi žanrovi</option>
+            </select>
+            <select id="filter-language">
+                <option value="">Svi jezici</option>
+            </select>
+            <select id="filter-year">
+                <option value="">Sve godine</option>
+            </select>
+            <select id="filter-read">
+                <option value="">Sve knjige</option>
+                <option value="read">Pročitano</option>
+                <option value="unread">Nepročitano</option>
+            </select>
+            <button class="btn" id="clear-filters">Poništi filtere</button>
+        </section>
+ 
+        <section class="table">
+            <section class="table-section">
+                <div>Title</div>
+                <div>Author</div>
+                <div>Year</div>
+                <div>Language</div>
+                <div>Genre</div>
+                <div></div>
+            </section>
+
+            <section id="book-list"></section>
+
+        </section>
+
+    </section>
+
+    <div id="modal">
+        <div id="modal-content">
+            <h2>Book Details</h2>
+            <p><strong>Title:</strong> <span id="modal-title"></span></p>
+            <p><strong>Author:</strong> <span id="modal-author"></span></p>
+            <p><strong>Year:</strong> <span id="modal-year"></span></p>
+            <p><strong>Language:</strong> <span id="modal-language"></span></p>
+            <p><strong>Genre:</strong> <span id="modal-genre"></span></p>
+            <button id="modal-close" class="btn">Close</button>
+        </div>
+    </div>  
+
+    <!-- Link to the JavaScript file -->
+    <script src="online_library.js"></script>
+</body>
+</html>
